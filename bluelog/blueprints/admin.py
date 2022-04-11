@@ -257,3 +257,8 @@ def upload_image():
     f.save(os.path.join(current_app.config['BLUELOG_UPLOAD_PATH'], f.filename))
     url = url_for('.get_image', filename=f.filename)
     return upload_success(url, f.filename)
+
+#try
+@admin_bp.errorhandler(404)
+def page_not_found(e):
+    return render_template('errors/404.html'), 404

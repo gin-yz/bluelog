@@ -50,7 +50,7 @@ class BaseConfig(object):
 
 class DevelopmentConfig(BaseConfig):
     # SQLALCHEMY_DATABASE_URI = prefix + os.path.join(basedir, 'data-dev.db')
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://ginyz:cjsdsg@127.0.0.1:11111/bluelogdb"
+    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:cjsdsg@127.0.0.1:3306/bluelogdb?charset=utf8"
 
 
 class TestingConfig(BaseConfig):

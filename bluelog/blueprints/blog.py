@@ -73,6 +73,7 @@ def show_post(post_id):
         replied_id = request.args.get('reply')
         if replied_id:
             replied_comment = Comment.query.get_or_404(replied_id)
+            #找父评论
             comment.replied = replied_comment
             send_new_reply_email(replied_comment)
         db.session.add(comment)

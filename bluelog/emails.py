@@ -14,8 +14,9 @@ from bluelog.extensions import mail
 
 
 def _send_async_mail(app, message):
-    with app.app_context():
-        mail.send(message)
+    # with app.app_context():
+    #     mail.send(message)
+    pass
 
 
 def send_mail(subject, to, html):

@@ -71,7 +71,9 @@ class Comment(db.Model):
     post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
 
     post = db.relationship('Post', back_populates='comments')
+    # 一对多的时候的多
     replies = db.relationship('Comment', back_populates='replied', cascade='all, delete-orphan')
+    # 一对多的时候的一
     replied = db.relationship('Comment', back_populates='replies', remote_side=[id])
     # Same with:
     # replies = db.relationship('Comment', backref=db.backref('replied', remote_side=[id]),
